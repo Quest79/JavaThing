@@ -22,8 +22,10 @@ public class Noidea{
 		
 		while( health>0 )
 		{	
-			Random rndGen = new Random();
-			int rndNum = rndGen.nextInt( 7 );
+			int Low = 10;					//Used for lowened number in random
+			int High = 15;					//Used for highend number in random
+			Random rndGen = new Random();	// Declare a new 'random' object
+			int rndNum = rndGen.nextInt(High-Low) + Low;	//Proper random between two numbers (high and low)
 			//System.out.println(rndNum);
 			//System.out.println(rndNum);
 			
