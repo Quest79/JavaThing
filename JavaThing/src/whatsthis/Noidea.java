@@ -18,7 +18,7 @@ public class Noidea{
 		first_name = user_input.next();
 		System.out.println("Hello, "+first_name);
 		
-		int health = 20;
+		int health = 100;
 		
 		while( health>0 )
 		{	
