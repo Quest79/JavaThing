@@ -11,21 +11,21 @@ public class Noidea{
 	{
 		System.out.println("Git is awesome");
 		
-		Scanner user_input = new Scanner(System.in);
-		randnum rn = new randnum();
+		Scanner user_input 	= new Scanner(System.in);
+		Randnum rn 			= new Randnum();
 		
 		System.out.println("What is your name?");
 		String first_name;
 		first_name = user_input.next();
 		System.out.println("Hello, "+first_name);
 		
-		int health = 100;
+		int health = 50;
 		
 		while( health>0 )
 		{	
 			//System.out.println(rndNum);
 			//System.out.println(rndNum);
-			int ii = rn.randnum();
+			int ii = rn.getRandNum();
 			
 			System.out.println(health);
 			System.out.println("Attack? Y/N");
@@ -42,5 +42,6 @@ public class Noidea{
 				System.out.println("cower..");
 			}
 		}
-	}	
+		System.out.println("!!!-------------------->DEATH!!!");
+	}
 }
