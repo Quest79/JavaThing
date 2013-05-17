@@ -12,6 +12,7 @@ public class Noidea{
 		System.out.println("Git is awesome");
 		
 		Scanner user_input = new Scanner(System.in);
+		randnum rn = new randnum();
 		
 		System.out.println("What is your name?");
 		String first_name;
@@ -22,12 +23,9 @@ public class Noidea{
 		
 		while( health>0 )
 		{	
-			int Low = 10;					//Used for lowened number in random
-			int High = 15;					//Used for highend number in random
-			Random rndGen = new Random();	// Declare a new 'random' object
-			int rndNum = rndGen.nextInt(High-Low) + Low;	//Proper random between two numbers (high and low)
 			//System.out.println(rndNum);
 			//System.out.println(rndNum);
+			int ii = rn.randnum();
 			
 			System.out.println(health);
 			System.out.println("Attack? Y/N");
@@ -36,8 +34,8 @@ public class Noidea{
 			
 			if (attack.equals("Y")){
 				System.out.println("KILL!");
-				System.out.println("You've done " + rndNum + " damage!");
-				health = health - rndNum;
+				System.out.println("You've done " + ii + " damage!");
+				health = health - ii;
 				System.out.println(health);
 			
 			} else {
