@@ -13,13 +13,19 @@ public class Noidea{
 		
 		Scanner user_input 	= new Scanner(System.in);
 		Randnum rn 			= new Randnum();
+		Hero herro			= new Hero("Bob", 53, 100);
 		
-		System.out.println("What is your name?");
-		String first_name;
-		first_name = user_input.next();
-		System.out.println("Hello, "+first_name);
+		int health = herro.getHealth();
+		int mana = herro.getMana();
 		
-		int health = 50;
+		//System.out.println("What is your name?");
+		//String first_name;
+		//first_name = user_input.next();
+		System.out.println("----------------------------------");
+		System.out.println("Hello, "+herro.getName()+".");
+		System.out.println("You have: "+ health+" health and "+mana+" mana.");
+		System.out.println("----------------------------------");
+		//int health = 50;
 		
 		while( health>0 )
 		{	
@@ -27,12 +33,12 @@ public class Noidea{
 			//System.out.println(rndNum);
 			int ii = rn.getRandNum();
 			
-			System.out.println(health);
+			//System.out.println(health);
 			System.out.println("Attack? Y/N");
 			String attack;
 			attack = user_input.next();
 			
-			if (attack.equals("Y")){
+			if (attack.equals("Y") || attack.equals("y")){
 				System.out.println("KILL!");
 				System.out.println("You've done " + ii + " damage!");
 				health = health - ii;

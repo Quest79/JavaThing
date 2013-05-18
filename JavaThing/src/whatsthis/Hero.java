@@ -4,13 +4,13 @@ public class Hero{
 	
 	   private String name;
 	   private int health;
-	   private int number;
+	   private int mana;
 	   
-	   public Hero(String name, int health, int number){
-	      System.out.println("Constructing an Hero");
+	   public Hero(String name, int health, int mana){
+	      System.out.println("Herro the Hero Construction Begins");
 	      this.name = name;
 	      this.health = health;
-	      this.number = number;
+	      this.mana = mana;
 	   }
 	   
 	   public void mailCheck(){
@@ -19,7 +19,7 @@ public class Hero{
 	   }
 	   
 	   public String toString(){
-	      return name + " " + health + " " + number;
+	      return name + " " + health + " " + mana;
 	   }
 	   
 	   public String getName(){
@@ -34,8 +34,8 @@ public class Hero{
 		   health = newHealth;
 	   }
 	   
-	   public int getNumber(){
-	     return number;
+	   public int getMana(){
+	     return mana;
 	   }
 	   
 }
