@@ -7,7 +7,7 @@ public class Hero{
 	   private int mana;
 	   
 	   public Hero(String name, int health, int mana){
-	      System.out.println("Hero Construction Begins! The power... IS YOURS");
+	      //System.out.println("Hero Construction Begins! The power... IS YOURS");
 	      this.name = name;
 	      this.health = health;
 	      this.mana = mana;
