@@ -23,28 +23,26 @@ public class Noidea{
 		
 		String jobz;
 		jobz = user_input.next();
+		int hl;
+		int mg;
 		
 		if (jobz.equals("Mage") || jobz.equals("mage")){
-			int hl = 35;
-			int mg = 100;
-			Hero herro = new Hero(hn, hl, mg);
-			int health = herro.getHealth();
-			int mana = herro.getMana();
-			String myheroname = herro.getName();
-			System.out.println(myheroname+". A good name. A name they shall rise their glass of mead to in a heros song!");
-			System.out.println("----------------------------------");
-			System.out.println("Hello, "+myheroname+".");
-			System.out.println("You have: "+ health+" health and "+mana+" mana.");
-			System.out.println("----------------------------------");
+			hl = 35;
+			mg = 100;
 		}else{
-			int hl = 85;
-		    int mg = 10;
-		    Hero herro = new Hero(hn, hl, mg);
-			int health = herro.getHealth();
-			int mana = herro.getMana();
-			String myheroname = herro.getName();
-			System.out.println(myheroname+". A good name. A name they shall rise their glass of mead to in a heros song!");
+			hl = 85;
+		    mg = 10;
 		}
+		
+		Hero herro = new Hero(hn, hl, mg);
+		int health = herro.getHealth();
+		int mana = herro.getMana();
+		String myheroname = herro.getName();
+		System.out.println(myheroname+". A good name. A name they shall rise their glass of mead to in a heros song!");
+		System.out.println("----------------------------------");
+		System.out.println("Hello, "+myheroname+".");
+		System.out.println("You have: "+ health+" health and "+mana+" mana.");
+		System.out.println("----------------------------------");
 		
 		//System.out.println("----------------------------------");
 		//System.out.println("Hello, "+myheroname+".");
