@@ -9,18 +9,20 @@ public class Noidea{
 
 	public static void main(String[] args)
 	{
-		System.out.println("Git is awesome");
+		//System.out.println("Git is awesome");
 		
 		Scanner user_input 	= new Scanner(System.in);
+		
+		System.out.println("What is your name?");
+		String heroname;
+		heroname = user_input.next();
+		
 		Randnum rn 			= new Randnum();
-		Hero herro			= new Hero("Bob", 53, 100);
+		Hero herro			= new Hero(heroname, 53, 100);
 		
 		int health = herro.getHealth();
 		int mana = herro.getMana();
 		
-		//System.out.println("What is your name?");
-		//String first_name;
-		//first_name = user_input.next();
 		System.out.println("----------------------------------");
 		System.out.println("Hello, "+herro.getName()+".");
 		System.out.println("You have: "+ health+" health and "+mana+" mana.");
