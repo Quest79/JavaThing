@@ -9,7 +9,6 @@ public class WeaponMath{
 	private double	critmod;
 
 	public WeaponMath(String name, int low, int high, double critmod){
-		// System.out.println("Hero Construction Begins! The power... IS YOURS");
 		this.name = name;
 		this.high = high;
 		this.low = low;
@@ -37,16 +36,6 @@ public class WeaponMath{
 		return avg;
 	}
 
-	// public double getDamageNormRND() {
-	// double norm = rn.getRandNum2(low, high);
-	// return Math.round(norm * 100.0) / 100.0;
-	// }
-
-	// public double getDamageCritRND() {
-	// double crit = critmod * rn.getRandNum2(low, high);
-	// return Math.round(crit * 100.0) / 100.0;
-	// }
-	
 	public double getDamageNormRND() {
 		double norm = rn.getRandNum2(low, high);
 		return getRound100(norm);
