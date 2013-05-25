@@ -1,17 +1,19 @@
 package whatsthis;
 
-import java.util.Random;
 import java.util.Scanner;
 
-//import java.lang.Byte;
+// import java.lang.Byte;
 
-public class Noidea {
+public class Noidea{
 
-	private static Scanner user_input;
+	private static Scanner	user_input;
 
 	public static void main(String[] args) {
 		// System.out.println("Git is awesome");
 		Randnum rn = new Randnum();
+		Battlemath bm = new Battlemath();
+		double crt = Battlemath.getDamageCrit();
+		System.out.println(crt);
 		Scanner user_input = new Scanner(System.in);
 
 		System.out
@@ -45,19 +47,23 @@ public class Noidea {
 			lol = "warriorlicious";
 		}
 
+		/*
+		 * Make a Hero Object
+		 */
 		Hero herro = new Hero(hn, hl, mg, st);
+
+		/*
+		 * Make some variables easier to read
+		 */
 		int health = herro.getHealth();
 		int mana = herro.getMana();
 		int strength = herro.getStrength();
 		String gr8 = herro.getGreatness();
 		String myheroname = herro.getName();
+		int monsterh = 200;
 
-		// System.out
-		// .println(myheroname
-		// +
-		// ". A good name. A name they shall rise their glass of mead to in a heros song!");
 		System.out.println("----------------------------------");
-		System.out.println("Greetings, " + myheroname + ". The "+gr8);
+		System.out.println("Greetings, " + myheroname + ". The " + gr8);
 		System.out.println("You have: " + health + " health and " + mana
 				+ " mana. Your strength is level: " + strength);
 		System.out.println("----------------------------------");
@@ -68,17 +74,23 @@ public class Noidea {
 			int ii = rn.getRandNum();
 
 			// System.out.println(health);
-			System.out.println("Attack? Y/N");
-			String attack;
-			attack = user_input.next();
+			System.out.println("Attack? 'A' or Heal? 'H'");
+			String action;
+			action = user_input.next();
 
-			if (attack.equals("Y") || attack.equals("y")) {
-				System.out.println("KILL!");
-				System.out.println("You've done " + ii + " damage!");
-				health = health - ii;
-				System.out.println(health);
+			if (action.equals("A") || action.equals("a")) {
+				// System.out.println("KILL!");
+				// System.out.println("You've done " + ii + " damage!");
+				monsterh -= ii;
+				String text = String
+						.format("The Monster has sustained %d damage and now has %d health.", ii, monsterh);
+				System.out.println(text);
 			} else {
-				System.out.println("cower..");
+				health += ii;
+				String text = String
+						.format("Your health has gone up by: %d and is now: %d", ii, health);
+				System.out.println(text);
+				// System.out.println("cower..");
 			}
 		}
 		System.out.println("!!!-------------------->DEATH!!!");
