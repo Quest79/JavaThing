@@ -9,15 +9,48 @@ public class Noidea{
 	private static Scanner	user_input;
 
 	public static void main(String[] args) {
-		// System.out.println("Git is awesome");
+
 		Randnum rn = new Randnum();
-		Battlemath bm = new Battlemath();
-		double crt = Battlemath.getDamageCrit();
-		System.out.println(crt);
-		Scanner user_input = new Scanner(System.in);
+
+		WeaponMath bm = new WeaponMath("Sword", 12, 21, 2.526);
+		double crt = bm.getDamageCritRND();
+		double avg = bm.getDamageAvg();
+		int high = bm.getDamageHigh();
+		int low = bm.getDamageLow();
+		double mod = bm.getDamageMod();
+		double norm = bm.getDamageNormRND();
+		String name = bm.getWeaponName();
+		System.out.println("Name:	"+name);	
+		System.out.println("---------------");
+		System.out.println("HIGH:	"+high);
+		System.out.println("low:	"+low);
+		System.out.println("---------------");
+		System.out.println("Mod:	"+mod);
+		System.out.println("Avg:	"+avg);
+		System.out.println("---------------");
+		System.out.println("RNDCrit:"+crt);
+		System.out.println("RNDNorm:"+norm);
+		
+		int dice;
+		double critchance = 42.8;
+		double supercritchance = 21.8;
+		dice = rn.getRandNum2(0, 1000);
+		
+		if (dice <= supercritchance*10) {
+			System.out.println(dice);
+			System.out.println("SUPER CRITICAL!" + crt);
+		}else if(dice <= critchance*10 ){
+			System.out.println(dice);
+			System.out.println("YOU CRIT FOR:" + norm);
+		}else{
+			System.out.println(dice);
+			System.out.println("Normal Damage For:" + norm);
+		}
+
+/*		Scanner user_input = new Scanner(System.in);
 
 		System.out
-				.println("Adventurer! \n What grandiose days are these that a call to arms hath come across thine days. "
+				.println("Adventurer! \n What grandiose days are these that a call to arms hath come across thine lands. "
 						+ "\n To venture forth upon the wildlands and meet many a strange new creature; and murder them. "
 						+ "\n Pray tell, what is thine name?");
 		String hn;
@@ -47,14 +80,14 @@ public class Noidea{
 			lol = "warriorlicious";
 		}
 
-		/*
+		
 		 * Make a Hero Object
-		 */
+		 
 		Hero herro = new Hero(hn, hl, mg, st);
 
-		/*
+		
 		 * Make some variables easier to read
-		 */
+		 
 		int health = herro.getHealth();
 		int mana = herro.getMana();
 		int strength = herro.getStrength();
@@ -93,6 +126,6 @@ public class Noidea{
 				// System.out.println("cower..");
 			}
 		}
-		System.out.println("!!!-------------------->DEATH!!!");
+		System.out.println("!!!-------------------->DEATH!!!");*/
 	}
 }
