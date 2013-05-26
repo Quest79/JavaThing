@@ -1,18 +1,20 @@
 package whatsthis;
 
-public class WeaponMath{
+public class Weapon{
 	static Randnum	rn	= new Randnum();
 
 	private String	name;
 	private int		high;
 	private int		low;
 	private double	critmod;
+	private double	supercritmod;
 
-	public WeaponMath(String name, int low, int high, double critmod){
+	public Weapon(String name, int low, int high, double critmod, double supercritmod){
 		this.name = name;
 		this.high = high;
 		this.low = low;
 		this.critmod = critmod;
+		this.supercritmod = supercritmod;
 	}
 
 	public String getWeaponName() {
@@ -31,6 +33,10 @@ public class WeaponMath{
 		return critmod;
 	}
 
+	public double getDamageModSuper() {
+		return supercritmod;
+	}
+
 	public double getDamageAvg() {
 		double avg = (low + high) / 2.0;
 		return avg;
@@ -46,8 +52,13 @@ public class WeaponMath{
 		return getRound100(crit);
 	}
 
+	public double getDamageSupCritRND() {
+		double crit = supercritmod * rn.getRandNum2(low, high);
+		return getRound100(crit);
+	}
+
 	public double getRound100(double num) {
-		double rounded = Math.round(num * 100.0) / 100.0;;
+		double rounded = Math.round(num * 100.0) / 100.0;
 		return rounded;
 	}
 }
